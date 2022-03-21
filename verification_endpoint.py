@@ -23,7 +23,8 @@ def verify():
     pk = payload.get('pk')
     result = False
     if platform == "Ethereum":
-        pass
+        if eth_account.Account.recover_message(message,signature=sig.hex()) == pk:
+            result = True
     elif platform == "Algorand":
         pass
     
