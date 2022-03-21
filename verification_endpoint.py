@@ -16,19 +16,19 @@ def verify():
     #y = json.loads(content)
     #print(y)
     sig = content.get('sig')
-    #payload = y["payload"]
-    """
-    platform = payload["platform"]
-    message = payload["message"]
-    pk = payload.get["pk"]
+    payload = content.get('payload')
+    
+    platform = payload.get('platform')
+    message = payload.get('message')
+    pk = payload.get('pk')
     result = False
     if platform == "Ethereum":
         pass
     elif platform == "Algorand":
         pass
-    """
+    
     #Check if signature is valid
-    result = True #Should only be true if signature validates
+    #result = True #Should only be true if signature validates
 
     return jsonify(result)
 
