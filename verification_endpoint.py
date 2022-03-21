@@ -12,9 +12,9 @@ app.url_map.strict_slashes = False
 def verify():
     content = request.get_json(silent=True)
     print(content)
-    y = json.loads(content)
-    print(y)
-    #sig = y.get('sig')
+    #y = json.loads(content)
+    #print(y)
+    sig = content.get('sig')
     #payload = y["payload"]
     """
     platform = payload["platform"]
