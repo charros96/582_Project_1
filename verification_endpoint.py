@@ -14,9 +14,9 @@ def verify():
     content = json.loads(content)
     sig = content["sig"]
     payload = content["payload"]
-    platform = payload.get("platform")
-    message = payload.get("message")
-    pk = payload.get("pk")
+    platform = payload["platform"]
+    message = payload["message"]
+    pk = payload.get["pk"]
     result = False
     if platform == "Ethereum":
         pass
