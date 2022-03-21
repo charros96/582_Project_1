@@ -13,7 +13,7 @@ def verify():
     content = request.get_json(silent=True)
     #print(content)
     y = json.loads(content)
-    #sig = y["sig"]
+    sig = y['sig']
     #payload = y["payload"]
     """
     platform = payload["platform"]
