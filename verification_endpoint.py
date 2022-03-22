@@ -13,11 +13,12 @@ app.url_map.strict_slashes = False
 def verify():
     content = request.get_json(silent=True)
     
-    print(content)
+    
     
     sig = content.get('sig')
     payload = content.get('payload')
-    
+    print(sig)
+    print(payload)
     platform = payload.get('platform')
     message = payload.get('message')
     pk = payload.get('pk')
