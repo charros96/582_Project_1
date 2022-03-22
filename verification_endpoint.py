@@ -27,7 +27,7 @@ def verify():
         print("Ethereum")
         #eth_encoded_msg = eth_account.messages.encode_defunct(payload)
         
-        if eth_account.Account.recover_message(message = json.dumps(payload),signature=sig) == pk:
+        if eth_account.Account.recover_message(json.dumps(payload),signature=sig) == pk:
             result = True
     elif platform == "Algorand":
         #algo_sig_str = algosdk.util.sign_bytes(payload.encode('utf-8'),algo_sk)
