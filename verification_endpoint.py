@@ -24,9 +24,9 @@ def verify():
     pk = payload.get('pk')
     result = False
     if platform == "Ethereum":
-        print("Ethereum")
-        print(json.dumps(payload))
-        print(type(json.dumps(payload)))
+        #print("Ethereum")
+        #print(json.dumps(payload))
+        #print(type(json.dumps(payload)))
         eth_encoded_msg = eth_account.messages.encode_defunct(text =json.dumps(payload))
         
         if eth_account.Account.recover_message(eth_encoded_msg,signature=sig) == pk:
