@@ -34,7 +34,7 @@ def verify():
     elif platform == "Algorand":
         #algo_sig_str = algosdk.util.sign_bytes(payload.encode('utf-8'),algo_sk)
 
-        if algosdk.util.verify_bytes(json.dumps(payload),sig,pk):
+        if algosdk.util.verify_bytes(json.dumps(payload).encode('utf-8'),sig,pk):
             result = True
     
     #Check if signature is valid
