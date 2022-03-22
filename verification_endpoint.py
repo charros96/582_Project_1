@@ -26,13 +26,13 @@ def verify():
     if platform == "Ethereum":
         print("Ethereum")
         #eth_encoded_msg = eth_account.messages.encode_defunct(payload)
-        print(type(sig))
+        
         if eth_account.Account.recover_message(message = json.dumps(payload),signature=sig) == pk:
             result = True
     elif platform == "Algorand":
         #algo_sig_str = algosdk.util.sign_bytes(payload.encode('utf-8'),algo_sk)
 
-        if algosdk.util.verify_bytes(payload.encode('utf-8'),sig,pk):
+        if algosdk.util.verify_bytes(json.dumps(payload),sig,pk):
             result = True
     
     #Check if signature is valid
