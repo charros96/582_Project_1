@@ -24,7 +24,7 @@ def verify():
     result = False
     if platform == "Ethereum":
         print("Ethereum")
-        if eth_account.Account.recover_message(message = eth_account.encode_defunct(payload),signature=sig.hex()) == pk:
+        if eth_account.Account.recover_message(message = eth_account.encode_defunct(payload),signature=sig) == pk:
             result = True
     elif platform == "Algorand":
         pass
